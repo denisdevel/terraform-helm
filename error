@@ -1,0 +1,30 @@
+najar@idea:~/proj/terraform-helm$ terraform apply "plan"
+helm_release.planner-service: Creating...
+  chart:            "" => "chartmuseum/planner-service"
+  disable_webhooks: "" => "false"
+  force_update:     "" => "false"
+  keyring:          "" => "/home/najar/.gnupg/pubring.gpg"
+  metadata.#:       "" => "<computed>"
+  name:             "" => "planner-service"
+  namespace:        "" => "default"
+  recreate_pods:    "" => "false"
+  reuse:            "" => "false"
+  reuse_values:     "" => "false"
+  timeout:          "" => "300"
+  verify:           "" => "false"
+  version:          "" => "0.1.5"
+helm_release.planner-service: Still creating... (10s elapsed)
+
+Error: Error applying plan:
+
+1 error(s) occurred:
+
+* helm_release.planner-service: 1 error(s) occurred:
+
+* helm_release.planner-service: rpc error: code = Unknown desc = release planner-service failed: object is being deleted: persistentvolumeclaims "filestorage" already exists
+
+Terraform does not automatically rollback in the face of errors.
+Instead, your Terraform state file has been partially updated with
+any resources that successfully completed. Please address the error
+above and apply again to incrementally change your infrastructure.
+

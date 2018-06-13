@@ -1,0 +1,12 @@
+Error: Error applying plan:
+
+1 error(s) occurred:
+
+* helm_release.planner-service: 1 error(s) occurred:
+
+* helm_release.planner-service: rpc error: code = Unknown desc = release planner-service failed: timed out waiting for the condition
+
+Terraform does not automatically rollback in the face of errors.
+Instead, your Terraform state file has been partially updated with
+any resources that successfully completed. Please address the error
+above and apply again to incrementally change your infrastructure.
